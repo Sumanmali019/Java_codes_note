@@ -3,12 +3,12 @@ import udemy.LinkList.LinKlists;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        LinKlists myKlists = new LinKlists(0);
+        LinKlists myKlists = new LinKlists(2);
 
-        myKlists.append(2);
+        myKlists.append(7);
 
-        // myKlists.append(23);
-        // myKlists.append(7);
+        myKlists.append(23);
+        myKlists.append(9);
 
         // myKlists.PrintList();
 
@@ -22,9 +22,9 @@ public class App {
         // // (0) Item - return null
         // System.out.println(myKlists.removeLast());
 
-        // myKlists.prepend(1);
+        myKlists.prepend(4);
 
-        // myKlists.PrintList();
+        myKlists.PrintList();
 
         // System.out.println();
 
@@ -41,9 +41,9 @@ public class App {
 
         // myKlists.set(2, 90);
 
-        myKlists.Insert(1, 1);
+        // myKlists.Insert(1, 1);
 
-        myKlists.PrintList();
+        // myKlists.PrintList();
 
     }
 }

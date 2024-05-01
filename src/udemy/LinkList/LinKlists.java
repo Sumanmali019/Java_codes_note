@@ -9,7 +9,6 @@ public class LinKlists {
         public int value;
         Node next;
 
-        // constructor
         public Node(int vlaue) {
             this.value = vlaue;
         }

@@ -1,4 +1,4 @@
-package udemy.doubleLinkList;
+package udemy.DoubleLinkList;
 
 public class DoublyLinkList {
 

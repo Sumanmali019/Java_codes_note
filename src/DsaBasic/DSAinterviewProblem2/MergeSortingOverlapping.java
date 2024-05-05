@@ -11,6 +11,8 @@ public class MergeSortingOverlapping {
 
     public int[][] solve(int[][] A) {
 
+        //frist approch
+
         // Arrays.sort(A, (a, b) -> a[0] - b[0]);
 
         // ArrayList<int[]> res = new ArrayList<>();
@@ -45,6 +47,7 @@ public class MergeSortingOverlapping {
 
         while (i < n) {
             current = A[i];
+            i++;
 
             int next[];
 

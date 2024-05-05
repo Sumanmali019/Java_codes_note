@@ -1,4 +1,4 @@
-package DSAOneDimensional;
+package DsaBasic.DSAOneDimensional;
 
 /*
  * Problem Description

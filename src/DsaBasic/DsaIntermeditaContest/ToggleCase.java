@@ -1,4 +1,4 @@
-package DsaBasic.DsaIntermeditaContest;
+package DsaBasic.DSAIntermeditaContest;
 
 /*
  * 

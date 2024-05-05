@@ -1,4 +1,4 @@
-package SlidingWindow;
+package BasicMethod.SlidingWindow;
 
 /*
  You are given an integer array A of length N.

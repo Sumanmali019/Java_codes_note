@@ -1,4 +1,4 @@
-package DSATwoDinmention;
+package DsaBasic.DSATwoDinmention;
 /*
  Given a binary sorted matrix A of size N x N. Find the row with the maximum number of 1.
 

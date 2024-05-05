@@ -1,4 +1,4 @@
-package DSATwoDinmention;
+package DsaBasic.DSATwoDinmention;
 /*
  Given a matrix of integers A of size N x M and an integer B.
 In the given matrix every row and column is sorted in non-decreasing order. Find and return the position of B in the matrix in the given form:

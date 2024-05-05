@@ -1,4 +1,4 @@
-package DSAOneDimensional;
+package DsaBasic.DSAOneDimensional;
 
 /*
  You are given a binary string A(i.e., with characters 0 and 1) consisting of characters A1, A2, ..., AN. In a single operation, you can choose two indices, L and R, such that 1 ≤ L ≤ R ≤ N and flip the characters AL, AL+1, ..., AR. By flipping, we mean changing character 0 to 1 and vice-versa.

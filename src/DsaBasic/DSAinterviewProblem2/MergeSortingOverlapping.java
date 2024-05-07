@@ -68,7 +68,7 @@ public class MergeSortingOverlapping {
     }
 
     boolean isOverLapping(int[] a1, int[] a2) {
-        if (a1[1] >= a2[1]) {
+        if (a1[1] >= a2[0]) {
             return true;
         }
         return false;

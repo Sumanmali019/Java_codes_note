@@ -2,31 +2,30 @@ package DsaBasic.bitManupulatation2;
 
 public class Maximumandpair {
     public int solve(int[] A) {
-
-        int sum = 0;
-        int maxValue = Integer.MIN_VALUE;
-
         int n = A.length;
+        int ans = 0;
 
-        for (int i = 0; i < n; i++) {
-            // int count = 0;
-            for (int j = i + 1; j < n; j++) {
-                sum = A[i] & A[j];
-                maxValue = Math.max(sum, maxValue);
+        for (int i = 31; i >= 0; i--) {
+            int count = 0;
+            for (int j = 0; j < n; j++) {
+                if (checkBits(A[j], i)) {
+                    count = count + 1;
+                }
             }
 
+            if (count >= 2) {
+                ans = ans + (1 << i);
+                for (int j = 0; j < n; j++) {
+                    if (!checkBits(A[j], i)) {
+                        A[j] = 0;
+                    }
+                }
+            }
         }
-        return maxValue;
+        return ans;
     }
 
-    public static void main(String[] args) {
-        Maximumandpair maximumandpair = new Maximumandpair();
-
-        int[] A = { 38, 44, 84, 12 };
-
-        int res = maximumandpair.solve(A);
-
-        System.out.println(res);
-
+    public boolean checkBits(int num, int pos) {
+        return ((num >> pos) & 1) == 1;
     }
 }

@@ -1,49 +1,21 @@
-import udemy.LinkList.LinKlists;
+class App {
+    public static long pairWithMaxSum(long arr[], long N) {
 
-public class App {
+        long maxSum = Long.MIN_VALUE;
 
-    public static void main(String[] args) throws Exception {
-        LinKlists myKlists = new LinKlists(2);
+        for (int i = 0; i < N - 1; i++) {
+            long currentSum = arr[i] + arr[i + 1];
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
 
-        myKlists.append(7);
+        return maxSum;
+    }
 
-        myKlists.append(23);
-        myKlists.append(9);
-
-        // myKlists.PrintList();
-
-        // System.out.println();
-        // // (2) Item - return 2 node
-        // System.out.println(myKlists.removeLast().value);
-
-        // // (1) Item - return 1 node
-        // System.out.println(myKlists.removeLast().value);
-
-        // // (0) Item - return null
-        // System.out.println(myKlists.removeLast());
-
-        myKlists.prepend(4);
-
-        myKlists.PrintList();
-
-        // System.out.println();
-
-        // // (2) Item - return 2 node
-        // System.out.println(myKlists.revmoveFrist().value);
-
-        // // (1) Item - return 1 node
-        // System.out.println(myKlists.revmoveFrist().value);
-
-        // // (0) Item - return null
-        // System.out.println(myKlists.revmoveFrist());
-
-        // System.out.println(myKlists.get(2).value + "\n");
-
-        // myKlists.set(2, 90);
-
-        // myKlists.Insert(1, 1);
-
-        // myKlists.PrintList();
-
+    public static void main(String[] args) {
+        long[] arr = { 10, 4, 5, 7, 6, 10, 6 };
+        long N = arr.length;
+        System.out.println(pairWithMaxSum(arr, N));
     }
 }

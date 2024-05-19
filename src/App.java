@@ -1,21 +1,38 @@
+import java.util.*;
+
+/*
+ Given an array of integers nums and an integer target,
+ return indices of the two numbers such that they add up to target. 
+ You may assume that each input would have exactly one solution, 
+ and you may not use the same element twice. 
+ You can return the answer in any order.
+
+input: nums = [2, 7, 11, 15], target = 9
+Expected Output: [0, 1]
+
+*/
 class App {
-    public static long pairWithMaxSum(long arr[], long N) {
+    public int maxSatisfaction(int[] satisfaction) {
+        Arrays.sort(satisfaction);
 
-        long maxSum = Long.MIN_VALUE;
+        int output = 0;
+        int sum = 0;
+        int max = 0;
 
-        for (int i = 0; i < N - 1; i++) {
-            long currentSum = arr[i] + arr[i + 1];
-            if (currentSum > maxSum) {
-                maxSum = currentSum;
-            }
+        for (int i = satisfaction.length - 1; i >= 0; i--) {
+            output += satisfaction[i] + sum;
+            sum += satisfaction[i];
+            max = Math.max(output, max);
         }
-
-        return maxSum;
+        return max;
     }
 
     public static void main(String[] args) {
-        long[] arr = { 10, 4, 5, 7, 6, 10, 6 };
-        long N = arr.length;
-        System.out.println(pairWithMaxSum(arr, N));
+        App app = new App();
+        int[] a = { 4, 3, 2 };
+        int ans = app.maxSatisfaction(a);
+
+        System.out.println((ans));
     }
+
 }

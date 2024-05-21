@@ -1,7 +1,10 @@
 package dsacontest;
 
 /*
-Once upon a time, there was a library which had a shelf of books that was initially sorted in non-decreasing order based on the book's titles. One day, the librarian decided to rearrange the books by rotating the shelf some number of positions (including zero). Now, she wants to know if the order of the books has been changed or not. Can you help the librarian by writing a function that returns 1 if the shelf was originally sorted in non-decreasing and then rotated to current order and O otherwise?
+Once upon a time, there was a library which had a shelf of books that was initially sorted in non-decreasing order based on the book's titles.
+One day, the librarian decided to rearrange the books by rotating the shelf some number of positions (including zero). 
+Now, she wants to know if the order of the books has been changed or not. 
+Can you help the librarian by writing a function that returns 1 if the shelf was originally sorted in non-decreasing and then rotated to current order and O otherwise?
 Note: An array A rotated by x positions results in an array B of the same length such that A[i]
 B[(i+x) % A.length], where % is the modulo operation.
 Problem Constraints
@@ -28,11 +31,16 @@ public class Librarianandrotation {
 
         // Identify the number of disruptions
         for (int i = 0; i < n; i++) {
+            System.out.println(A[i] + " count disruptionCount " + A[(i + 1) % n]);
+
             if (A[i] > A[(i + 1) % n]) {
                 disruptionCount++;
                 disruptionIndex = i;
             }
         }
+
+        System.out.println("disruptionIndex " + disruptionIndex);
+        System.out.println();
 
         // If there is more than one disruption, it can't be sorted by rotation
         if (disruptionCount > 1) {
@@ -46,11 +54,21 @@ public class Librarianandrotation {
 
         // There is exactly one disruption, so let's check if rotation works
         // Check if rotating at (disruptionIndex + 1) results in a sorted array
-        int rotationPoint = (disruptionIndex + 1) % n;
+        int rotationPoint = (disruptionIndex + 1) % 3;
+
         for (int i = 1; i < n; i++) {
+            System.out.println("A[i]" + A[(rotationPoint + i) % n]);
+
+            System.out.println();
+            System.out.println("A[i -1]" + A[(rotationPoint + i - 1) % n]);
+            System.out.println();
+
             if (A[(rotationPoint + i) % n] < A[(rotationPoint + i - 1) % n]) {
+
                 return 0;
             }
+            System.out.println(A[1]);
+            System.out.println(A[5]);
         }
 
         return 1;
@@ -59,8 +77,10 @@ public class Librarianandrotation {
     public static void main(String[] args) {
         Librarianandrotation point = new Librarianandrotation();
 
-        int[] A = { 7, 10 };
-
+        int[] A = { 4, 5, 6, 1, 2, 3 };
+        // 345612
+        // 234561
+        // 123456
         int res = point.solveme(A);
 
         System.out.println(res);

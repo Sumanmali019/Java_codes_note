@@ -16,6 +16,7 @@ class App {
         if (A == 0) {
             return 0;
         }
+        
 
         if (B == 0 && A != 0) {
             return 1;

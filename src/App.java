@@ -12,27 +12,31 @@ Expected Output: [0, 1]
 
 */
 class App {
-    public int maxSatisfaction(int[] satisfaction) {
-        Arrays.sort(satisfaction);
-
-        int output = 0;
-        int sum = 0;
-        int max = 0;
-
-        for (int i = satisfaction.length - 1; i >= 0; i--) {
-            output += satisfaction[i] + sum;
-            sum += satisfaction[i];
-            max = Math.max(output, max);
+    public int maxSatisfaction(int A, int B, int C) {
+        if (A == 0) {
+            return 0;
         }
-        return max;
+
+        if (B == 0 && A != 0) {
+            return 1;
+        }
+
+        long ans = (maxSatisfaction(A, B / 2, C) + C) % C;
+        if (B % 2 == 0) {
+            return (int) ((ans * ans) % C);
+        } else {
+            return (int) ((((ans * ans) % C * (A) % C) % C + C) % C);
+        }
+
     }
 
     public static void main(String[] args) {
-        App app = new App();
-        int[] a = { 4, 3, 2 };
-        int ans = app.maxSatisfaction(a);
+        App maxSatisfaction = new App();
+        int A = -1;
+        int B = 1;
+        int C = 20;
+        int i = maxSatisfaction.maxSatisfaction(A, B, C);
 
-        System.out.println((ans));
+        System.out.println(i);
     }
-
 }
